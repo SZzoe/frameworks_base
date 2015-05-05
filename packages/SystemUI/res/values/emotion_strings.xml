@@ -62,4 +62,7 @@
     <string name="accessibility_quick_settings_caffeine_on">Caffeine on</string>
     <string name="quick_settings_powermenu_label">Power Menu</string>
 
+    <!-- Gesture Anywhere -->
+    <string name="gestures_message">Draw your gesture here</string>
+
 </resources>
