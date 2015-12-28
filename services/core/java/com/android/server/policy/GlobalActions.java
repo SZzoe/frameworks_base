@@ -148,6 +148,7 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
 
     // Power menu customizations
     String mActions;
+    private int mScreenshotDelay;
 
     private BitSet mAirplaneModeBits;
     private final List<PhoneStateListener> mPhoneStateListeners = new ArrayList<>();
@@ -288,6 +289,7 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
 
     private void handleShow() {
         awakenIfNecessary();
+        checkSettings();
         prepareDialog();
         WindowManager.LayoutParams attrs = mDialog.getWindow().getAttributes();
         attrs.setTitle("GlobalActions");
@@ -944,6 +946,13 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
                         msg.replyTo = new Messenger(h);
                         msg.arg1 = msg.arg2 = 0;
 
+                        /* wait for the dialog box to close */
+                        try {
+                             Thread.sleep(mScreenshotDelay * 1000);
+                        } catch (InterruptedException ie) {
+                            // Do nothing
+                        }
+
                         /* take the screenshot */
                         try {
                             messenger.send(msg);
@@ -1037,6 +1046,11 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
             mContext.registerReceiver(mRingerModeReceiver, filter);
         }
     }
+   private void checkSettings() {
+        mScreenshotDelay = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.SCREENSHOT_DELAY, 1);
+    }
+
 
     private void refreshSilentMode() {
         if (!mHasVibrator) {
