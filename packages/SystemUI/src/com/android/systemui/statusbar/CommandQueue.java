@@ -78,6 +78,7 @@ public class CommandQueue extends IStatusBar.Stub {
     private static final int MSG_DISMISS_KEYBOARD_SHORTCUTS    = 32 << MSG_SHIFT;
     private static final int MSG_HANDLE_SYSNAV_KEY             = 33 << MSG_SHIFT;
     private static final int MSG_SET_AUTOROTATE_STATUS         = 34 << MSG_SHIFT;
+    private static final int MSG_SCREEN_PINNING_STATE_CHANGED  = 35 << MSG_SHIFT;
 
     public static final int FLAG_EXCLUDE_NONE = 0;
     public static final int FLAG_EXCLUDE_SEARCH_PANEL = 1 << 0;
@@ -132,6 +133,7 @@ public class CommandQueue extends IStatusBar.Stub {
         void addQsTile(ComponentName tile);
         void remQsTile(ComponentName tile);
         void clickTile(ComponentName tile);
+        void screenPinningStateChanged(boolean enabled);
 
         void handleSystemNavigationKey(int arg1);
         void setAutoRotate(boolean enabled);
@@ -139,6 +141,14 @@ public class CommandQueue extends IStatusBar.Stub {
 
     public CommandQueue(Callbacks callbacks) {
         mCallbacks = callbacks;
+    }
+
+    public void screenPinningStateChanged(boolean enabled) {
+        synchronized (mLock) {
+            mHandler.removeMessages(MSG_SCREEN_PINNING_STATE_CHANGED);
+            mHandler.obtainMessage(MSG_SCREEN_PINNING_STATE_CHANGED,
+                    enabled ? 1 : 0, 0, null).sendToTarget();
+        }
     }
 
     public void setIcon(String slot, StatusBarIcon icon) {
@@ -523,6 +533,9 @@ public class CommandQueue extends IStatusBar.Stub {
                     break;
                 case MSG_TOGGLE_APP_SPLIT_SCREEN:
                     mCallbacks.toggleSplitScreen();
+                    break;
+                case MSG_SCREEN_PINNING_STATE_CHANGED:
+                    mCallbacks.screenPinningStateChanged(msg.arg1 != 0);
                     break;
                 case MSG_HANDLE_SYSNAV_KEY:
                     mCallbacks.handleSystemNavigationKey(msg.arg1);
