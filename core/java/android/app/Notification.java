@@ -3918,11 +3918,7 @@ public class Notification implements Parcelable
         }
 
         int resolveIconContrastColor() {
-<<<<<<< HEAD
             if (!mContext.getResources().getBoolean(R.bool.config_allowNotificationIconTextTinting)) {
-=======
-            if (!Resources.getSystem().getBoolean(R.bool.config_allowNotificationIconTextTinting)) {
->>>>>>> a9a42e3... Notifications: Expose a bool to disable dynamic colors
                 return mContext.getColor(R.color.notification_icon_default_color);
             } else {
                 return resolveContrastColor();
@@ -3930,11 +3926,7 @@ public class Notification implements Parcelable
         }
 
         int resolveContrastColor() {
-<<<<<<< HEAD
             if (!mContext.getResources().getBoolean(R.bool.config_allowNotificationIconTextTinting)) {
-=======
-            if (!Resources.getSystem().getBoolean(R.bool.config_allowNotificationIconTextTinting)) {
->>>>>>> a9a42e3... Notifications: Expose a bool to disable dynamic colors
                 return mContext.getColor(R.color.notification_text_default_color);
             }
 
