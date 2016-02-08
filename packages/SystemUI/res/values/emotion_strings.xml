@@ -61,6 +61,7 @@
     <string name="accessibility_quick_settings_caffeine_off">Caffeine off</string>
     <string name="accessibility_quick_settings_caffeine_on">Caffeine on</string>
     <string name="quick_settings_powermenu_label">Power Menu</string>
+    <string name="quick_settings_apppicker">App Picker</string>
 
     <!-- Gesture Anywhere -->
     <string name="gestures_message">Draw your gesture here</string>
