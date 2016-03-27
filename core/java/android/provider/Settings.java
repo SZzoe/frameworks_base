@@ -4786,6 +4786,12 @@ public final class Settings {
         public static final String DOUBLE_TAP_WAKE_DOZE = "double_tap_wake_doze";
 
         /**
+         * Heads up timeout configuration
+         * @hide
+         */
+        public static final String HEADS_UP_TIMEOUT = "heads_up_timeout";
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
