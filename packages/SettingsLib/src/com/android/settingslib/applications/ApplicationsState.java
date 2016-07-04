@@ -143,7 +143,7 @@ public class ApplicationsState {
                 PackageManager.GET_DISABLED_UNTIL_USED_COMPONENTS |
                 PackageManager.GET_META_DATA;
 
-        //
+		//
         //This is a trick to prevent the foreground thread from being delayed.
         //The problem is that Dalvik monitors are initially spin locks, to keep
         //them lightweight.  This leads to unfair contention -- Even though the
