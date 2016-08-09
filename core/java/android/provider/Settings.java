@@ -3817,6 +3817,11 @@ public final class Settings {
           */
          public static final String LOCKSCREEN_BATTERY_INFO = "lockscreen_battery_info";
 
+        /**
+         * Enable\Disable Bluetooth Battery bar
+         * @hide
+         */
+        public static final String BLUETOOTH_SHOW_BATTERY = "bluetooth_show_battery";
 
         /**
          * Whether to disable showing arrows in network traffic indicators
