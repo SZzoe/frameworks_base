@@ -28,4 +28,7 @@
     <!-- App sidebar item text shadow color -->
     <color name="sidebar_item_text_shadow_color">#ff000000</color>
 
+    <!-- QS edit page background color -->
+    <color name="qs_edit_item_decoration_bg">#ff384248</color>
+
 </resources>
