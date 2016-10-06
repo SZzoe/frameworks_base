@@ -400,6 +400,8 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
     // settings
     private QSPanel mQSPanel;
 
+    private boolean mShow4G;
+
     // top bar
     BaseStatusBarHeader mHeader;
     protected KeyguardStatusBarView mKeyguardStatusBar;
@@ -544,6 +546,8 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.NAV_BAR_DYNAMIC),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.SHOW_FOURG), false, this, UserHandle.USER_ALL);		    
             update();
         }
 
@@ -559,6 +563,14 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             ContentResolver resolver = mContext.getContentResolver();
 
             if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.SHOW_FOURG))) {
+                    mShow4G = Settings.System.getIntForUser(
+                            mContext.getContentResolver(),
+                            Settings.System.SHOW_FOURG,
+                            0, UserHandle.USER_CURRENT) == 1;
+                    mNetworkController.onConfigurationChanged();
+
+           } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.BATTERY_SAVER_MODE_COLOR))) {
                     mBatterySaverWarningColor = Settings.System.getIntForUser(
                             resolver, Settings.System.BATTERY_SAVER_MODE_COLOR,
@@ -593,6 +605,8 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                 removeSidebarView();
                 addSidebarView();
             }
+            boolean mShow4G = Settings.System.getIntForUser(resolver,
+                    Settings.System.SHOW_FOURG, 0, UserHandle.USER_CURRENT) == 1;	    
         }
     }
 
