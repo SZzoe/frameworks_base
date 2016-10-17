@@ -398,6 +398,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
     View mExpandedContents;
     TextView mNotificationPanelDebugText;
 
+    // DT2L camera vibration config
+    private int mDt2lCameraVibrateConfig;
+
     // settings
     private QSPanel mQSPanel;
 
@@ -556,6 +559,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                   Settings.System.DT2L_CAMERA_VIBRATE_CONFIG),
+                   false, this, UserHandle.USER_ALL);
             update();
         }
 
@@ -605,6 +611,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         @Override
         public void update() {
             ContentResolver resolver = mContext.getContentResolver();
+
             int sidebarPosition = Settings.System.getInt(
                     resolver, Settings.System.APP_SIDEBAR_POSITION,
                     AppSidebar.SIDEBAR_POSITION_LEFT);
@@ -618,6 +625,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 
             mMaxKeyguardNotifConfig = Settings.System.getIntForUser(resolver,
                     Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, 5, mCurrentUserId);
+
+            mDt2lCameraVibrateConfig = Settings.System.getIntForUser(resolver,
+                    Settings.System.DT2L_CAMERA_VIBRATE_CONFIG, 1, mCurrentUserId);
         }
     }
 
@@ -5274,8 +5284,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
     }
 
     private void vibrateForCameraGesture() {
-        // Make sure to pass -1 for repeat so VibratorService doesn't stop us when going to sleep.
-        mVibrator.vibrate(new long[]{0, 400}, -1 /* repeat */);
+        mVibrator.vibrate(new long[] { 0, mDt2lCameraVibrateConfig }, -1 /* repeat */);
     }
 
     public void onScreenTurnedOn() {
