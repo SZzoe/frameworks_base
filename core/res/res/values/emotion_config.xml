@@ -39,4 +39,5 @@
          kill the foreground app. -->
     <integer name="config_backKillTimeout">2000</integer>
 
+    <bool name="single_hand_mode">true</bool>
 </resources>
