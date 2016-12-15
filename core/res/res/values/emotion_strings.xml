@@ -36,4 +36,8 @@
     <string name="animation_grow_shrink_right">Grow in (Right)</string>
     <string name="action_null">Blank</string>
 
+    <!-- label for item that screenrecord in phone options dialog -->
+    <string name="global_action_screenrecord">Screenrecord</string>
+
+
 </resources>
