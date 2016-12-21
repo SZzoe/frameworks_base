@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
- * Copyright (c) 2016, The AOKP Project
+ * Copyright (c) 2016, Emotroid Team
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,5 +44,9 @@
     <color name="volume_panel_border_color">#ff2962ff</color><!-- blue A700 -->
     <color name="system_primary_color">@*android:color/primary_material_dark</color>
     <color name="system_accent_color">@*android:color/material_deep_teal_700</color>
+
+    <!-- Floating action button -->
+    <color name="fab_color">?android:attr/colorAccent</color>
+    <color name="floating_action_button_icon_color">@android:color/white</color>    
 
 </resources>
