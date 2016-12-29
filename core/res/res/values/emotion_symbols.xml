@@ -183,4 +183,7 @@
   <!-- Doze mode -->
   <java-symbol type="bool" name="config_doze_enabled_by_default" />
 
+  <!-- Screenshoot edit action -->
+  <java-symbol type="string" name="edit" />
+
 </resources>
