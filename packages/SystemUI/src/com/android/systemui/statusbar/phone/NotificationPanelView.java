@@ -2524,28 +2524,10 @@ public class NotificationPanelView extends PanelView implements
                     Settings.Secure.STATUS_BAR_LOCKED_ON_SECURE_KEYGUARD),
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
-<<<<<<< HEAD
                     Settings.System.QS_SMART_PULLDOWN),
                     false, this, UserHandle.USER_ALL);
-=======
-                    Settings.System.BLUR_SCALE_PREFERENCE_KEY), false, this);
-            resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.BLUR_RADIUS_PREFERENCE_KEY), false, this);
-            resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.TRANSLUCENT_QUICK_SETTINGS_PREFERENCE_KEY), false, this);
-            resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.STATUS_BAR_EXPANDED_ENABLED_PREFERENCE_KEY), false, this);
-            resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.TRANSLUCENT_QUICK_SETTINGS_PRECENTAGE_PREFERENCE_KEY), false, this);
-            resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.BLUR_DARK_COLOR_PREFERENCE_KEY), false, this);
-            resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.BLUR_LIGHT_COLOR_PREFERENCE_KEY), false, this);
-            resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.BLUR_MIXED_COLOR_PREFERENCE_KEY), false, this);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.DOUBLE_TAP_WAKE_DOZE), false, this, UserHandle.USER_ALL);
->>>>>>> fac4478... [1/2] Frameworks_base: Double tap to wake on doze
             update();
         }
 
