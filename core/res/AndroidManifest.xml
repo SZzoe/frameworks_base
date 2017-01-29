@@ -517,7 +517,7 @@
     <protected-broadcast android:name="masquerade.substratum.STATUS_CHANGED" />
 
 
-    <protected-broadcast android:name="cyanogenmod.intent.action.ACTION_LID_STATE_CHANGED" />
+    <protected-broadcast android:name="cyanogenmod.intent.action.LID_STATE_CHANGED" />
     <!-- ====================================================================== -->
     <!--                          RUNTIME PERMISSIONS                           -->
     <!-- ====================================================================== -->
