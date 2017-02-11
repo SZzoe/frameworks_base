@@ -53,4 +53,7 @@
     <!-- Screenshoot edit action -->
     <string name="edit">Edit</string>
 
+    <!-- Powermenu Torch -->
+    <string name="global_action_torch">Flashlight</string>
+
 </resources>
