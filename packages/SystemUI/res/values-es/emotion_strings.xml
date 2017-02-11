@@ -108,4 +108,5 @@
   <!-- Heads up snooze toast -->
   <string name="heads_up_snooze_message_one_minute">Notificaciones emergentes desactivadas durante 1 minuto.</string>
   <string name="heads_up_snooze_message">Las notificaciones emergentes no se mostrarán durante <xliff:g id="number">%d</xliff:g> minutos.</string>
+  <!-- Path data for Solid battery -->
 </resources>
