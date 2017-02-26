@@ -2737,6 +2737,7 @@
   <java-symbol type="bool" name="config_emergencyCallOnPowerkeyTapGestureEnabled" />
   <java-symbol type="bool" name="config_usb_data_unlock" />
   <java-symbol type="bool" name="config_volte_preferred" />
+  <java-symbol type="bool" name="operator_custom_sim_icon" />
 
   <!-- Last app switch animations -->
   <java-symbol type="anim" name="last_app_in" />
@@ -2807,5 +2808,10 @@
 
   <!-- config softap extention feature -->
   <java-symbol type="bool" name="config_softap_extention" />
-  <java-symbol type="bool" name="operator_custom_sim_icon" />
+
+  <!-- Accelerometer batching -->
+  <java-symbol type="bool" name="config_useDefaultBatchingForAccel" />
+
+  <!-- Allow devices to use wakelock for flashlight -->
+  <java-symbol type="bool" name="config_useWakeLockForFlashlight" />
 </resources>
