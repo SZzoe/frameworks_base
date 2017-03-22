@@ -138,4 +138,9 @@
   <string name="lock_to_app_toast_no_navbar">Irrottaaksesi tämän näytön, paina ja pidä Takasin-näppäintä pohjassa.</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
   <string name="lineage_system_error_manufacturer">Toimittajan asennustiedosto ei täsmää. Yleensä tämä tarkoittaa ettei toimittajan asennustiedosto ole ajantasalla. Varmista, että toimittajan asennustiedosto täsmää <xliff:g id="fingerprint">%1$s</xliff:g>.</string>
+  <!-- Strings for tethered notification -->
+  <!-- Shown when the device is tethered -->
+  <string name="tethered_notification_no_device_message">Ei kytkettyä laitetta</string>
+  <string name="tethered_notification_one_device_message"><xliff:g id="count">%1$s</xliff:g> yhdistetty laite</string>
+  <string name="tethered_notification_multi_device_message"><xliff:g id="count">%1$s</xliff:g> yhdistettyä laitetta</string>
 </resources>

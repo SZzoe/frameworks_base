@@ -138,4 +138,9 @@
   <string name="lock_to_app_toast_no_navbar">Bu ekranı kaldırmak için Geri tuşuna dokunun ve tutun.</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
   <string name="lineage_system_error_manufacturer">Vendor image eşleşmiyor. Bu eski bir vendor olduğu anlamına geliyor. Lütfen vendor image\'nin <xliff:g id="fingerprint">%1$s</xliff:g> ile eşleştiğinden emin olun.</string>
+  <!-- Strings for tethered notification -->
+  <!-- Shown when the device is tethered -->
+  <string name="tethered_notification_no_device_message">Bağlı cihaz yok</string>
+  <string name="tethered_notification_one_device_message"><xliff:g id="count">%1$s </xliff:g> cihaz bağlı</string>
+  <string name="tethered_notification_multi_device_message"><xliff:g id="count">%1$s</xliff:g> cihaz bağlı</string>
 </resources>
