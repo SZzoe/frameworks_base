@@ -642,6 +642,11 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                     false, this);
             mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(
                     Settings.System.QS_QUICKBAR_SCROLL_ENABLED),
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.NAVBAR_TINT_SWITCH),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.NAVBAR_BUTTON_COLOR),
                     false, this, UserHandle.USER_ALL);
             update();
         }
@@ -716,6 +721,12 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                                         0, UserHandle.USER_CURRENT) == 1;
                     RecentsActivity.startBlurTask();
                     updatePreferences(mContext);
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.NAVBAR_TINT_SWITCH))) {
+                mNavigationController.updateNavbarOverlay(mContext.getResources());
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.NAVBAR_BUTTON_COLOR))) {
+                mNavigationController.updateNavbarOverlay(mContext.getResources());
             }
             update();
         }
