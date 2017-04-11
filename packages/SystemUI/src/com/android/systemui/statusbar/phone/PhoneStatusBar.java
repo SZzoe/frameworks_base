@@ -1827,6 +1827,13 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         }
     };
 
+    private View.OnLongClickListener mLongPressBackListener = new View.OnLongClickListener() {
+        @Override
+        public boolean onLongClick(View v) {
+            return handleLongPressBack();
+        }
+    };
+
     @Override
     protected void toggleSplitScreenMode(int metricsDockAction, int metricsUndockAction) {
         if (mRecents == null) {
@@ -2436,7 +2443,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
     /**
      * Return whether there are any clearable notifications
      */
-    private boolean hasActiveClearableNotifications() {
+    public boolean hasActiveClearableNotifications() {
         int childCount = mStackScroller.getChildCount();
         for (int i = 0; i < childCount; i++) {
             View child = mStackScroller.getChildAt(i);
@@ -2497,10 +2504,6 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 
     protected boolean hasActiveOngoingNotifications() {
         return mNotificationData.hasActiveOngoingNotifications();
-    }
-
-    protected boolean hasActiveClearableNotifications() {
-        return mNotificationData.hasActiveClearableNotifications();
     }
 
     @Override
