@@ -564,7 +564,6 @@ public final class OverlayManagerService extends SystemService {
         private int handleIncomingUser(final int userId, @NonNull final String message) {
             if (getContext().checkCallingOrSelfPermission(
                     PERMISSION_MODIFY_OVERLAYS) == PackageManager.PERMISSION_GRANTED) {
-                    android.Manifest.permission.MODIFY_OVERLAYS) == PackageManager.PERMISSION_GRANTED) {
                 return userId;
             } else {
                 return ActivityManager.handleIncomingUser(Binder.getCallingPid(),
@@ -584,7 +583,6 @@ public final class OverlayManagerService extends SystemService {
 
             if (getContext().checkCallingOrSelfPermission(
                     PERMISSION_MODIFY_OVERLAYS) != PackageManager.PERMISSION_GRANTED) {
-                    android.Manifest.permission.MODIFY_OVERLAYS) != PackageManager.PERMISSION_GRANTED) {
                 if (callingUid != Process.SYSTEM_UID && callingUid != 0) {
                     getContext().enforceCallingOrSelfPermission(
                             android.Manifest.permission.CHANGE_CONFIGURATION, message);

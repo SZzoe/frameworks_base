@@ -3200,13 +3200,6 @@
         android:description="@string/permdesc_modifyOverlays"
         android:protectionLevel="signatureOrSystem" />
 
-	<!-- Allows an application to make calls to OverlayManagerService.
-	     @hide -->
-    <permission android:name="android.permission.MODIFY_OVERLAYS"
-        android:label="@string/permlab_modifyOverlays"
-        android:description="@string/permdesc_modifyOverlays"
-        android:protectionLevel="normal" />
-
     <application android:process="system"
                  android:persistent="true"
                  android:hasCode="false"
