@@ -262,6 +262,7 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
         mCameraImageView.setContentDescription(contentDescription);
         mCameraImageView.setDefaultFilter(shouldGrayScale ? mGrayScaleFilter : null);
         updateCameraVisibility();
+        updateLeftButtonVisibility();
     }
 
     private void initAccessibility() {
@@ -290,7 +291,7 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
         lp.width = getResources().getDimensionPixelSize(R.dimen.keyguard_affordance_width);
         lp.height = getResources().getDimensionPixelSize(R.dimen.keyguard_affordance_height);
         mCameraImageView.setLayoutParams(lp);
-        updateRightAffordanceIcon();
+        mCameraImageView.setImageDrawable(mContext.getDrawable(R.drawable.ic_camera_alt_24dp));
 
         lp = mLockIcon.getLayoutParams();
         lp.width = getResources().getDimensionPixelSize(R.dimen.keyguard_affordance_width);
@@ -332,7 +333,6 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
     public void setUserSetupComplete(boolean userSetupComplete) {
         mUserSetupComplete = userSetupComplete;
         updateCameraVisibility();
-        updateRightAffordanceIcon();
         updateLeftButtonVisibility();
         updateLeftAffordanceIcon();
     }
@@ -827,7 +827,8 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
 
         @Override
         public void onUserUnlocked() {
-            updateRightAffordance();
+            inflateCameraPreview();
+            updateCameraVisibility();
             updateLeftAffordance();
         }
     };
@@ -845,16 +846,6 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
     public void updateLeftAffordance() {
         updateLeftAffordanceIcon();
         updateLeftPreview();
-    }
-
-    public void updateRightAffordance() {
-        updateRightAffordanceIcon();
-        inflateCameraPreview();
-    }
-
-    public void onKeyguardShowingChanged() {
-        updateLeftAffordance();
-        updateRightAffordance();
     }
 
     private String getIndexHint(LockscreenShortcutsHelper.Shortcuts shortcut) {
