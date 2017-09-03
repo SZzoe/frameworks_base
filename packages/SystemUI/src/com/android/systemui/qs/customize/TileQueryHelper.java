@@ -180,10 +180,7 @@ public class TileQueryHelper {
                 }
                 icon.mutate();
                 icon.setTint(mContext.getColor(R.color.external_qs_tile_tint_color));
-<<<<<<< HEAD
                 icon.setTintMode(Mode.SRC_ATOP);
-=======
->>>>>>> 69b01a7... Expose external qs tile tint color
                 CharSequence label = info.serviceInfo.loadLabel(pm);
                 addTile(spec, icon, label != null ? label.toString() : "null", appLabel, mContext);
             }
