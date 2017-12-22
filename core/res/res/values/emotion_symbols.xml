@@ -194,9 +194,6 @@
   <java-symbol type="drawable" name="ic_lock_torch" />
   <java-symbol type="string" name="global_action_torch" />
 
-  <!-- OmniJaws Weather drawable -->
-  <java-symbol type="drawable" name="ic_qs_weather_default_on" />
-
   <!-- Dark mode -->
   <java-symbol type="style" name="Theme_DeviceDefault_Dark" />
   <java-symbol type="style" name="Theme_DeviceDefault_Dark_Red" />
